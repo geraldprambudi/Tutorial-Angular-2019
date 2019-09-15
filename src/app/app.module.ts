@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FoodComponent } from './food/food.component';
+import { FoodComponent } from './food/food.component'; 
+
+import { FormsModule } from '@angular/forms'; // Tambahkan forms module(1)
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { FoodComponent } from './food/food.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule // tambahkan ini forms module (2)
   ],
   providers: [],
   bootstrap: [AppComponent]

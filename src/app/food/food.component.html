@@ -1,1 +1,9 @@
-{{makanan}}
+<h2>{{laper.name|uppercase}} details</h2>
+<div><span>id: {{laper.id}}</span></div>
+<div><span>name: {{laper.name}}</span></div>
+<br>
+<div>
+	<label>name:
+		<input [(ngModel)]="laper.name" placeholder="name"/>
+	</label>
+</div>
