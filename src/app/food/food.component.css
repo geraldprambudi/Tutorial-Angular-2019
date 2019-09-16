@@ -1,0 +1,18 @@
+.container {
+  text-transform: capitalize;
+}
+
+.lapers li {
+  cursor: pointer;
+}
+
+.lapers li:hover {
+  color: #fff;
+  background-color: #e74c3c;
+}
+
+.lapers li.selected:hover {
+  background-color: #3498db;
+  color: white;
+}
+

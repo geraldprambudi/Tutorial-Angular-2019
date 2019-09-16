@@ -1,9 +1,44 @@
-<h2>{{laper.name|uppercase}} details</h2>
-<div><span>id: {{laper.id}}</span></div>
-<div><span>name: {{laper.name}}</span></div>
-<br>
-<div>
-	<label>name:
-		<input [(ngModel)]="laper.name" placeholder="name"/>
-	</label>
+<!-- tampilan tanpa menggunakan bootstrap -->
+<!-- <h2>Makanan Favoritku</h2>
+<ul class="lapers">
+  <li *ngFor="let laper of lapers" [class.selected]="laper === selectedLaper" (click)="onSelect(laper)">
+    <span class="badge">{{laper.id}}</span> {{laper.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedLaper">
+	<h2>{{ selectedLaper.name | uppercase }} Favoritku</h2>
+	<div><span>id: </span>{{ selectedLaper.id }}</div>
+	<div>
+		<label>name: 
+			<input [(ngModel)]="selectedLaper.name" placeholder="name"/>
+		</label>
+	</div>
+</div> -->
+
+<!-- tampilan menggunakan bootstrap 4 -->
+<div class="container">
+	<h2 class="p-3 text-center">Makanan Favorit</h2>
+	<ul class="list-group lapers">
+	  	<li class="list-group-item" *ngFor="let laper of lapers" [class.selected]="laper === selectedLaper" (click)="onSelect(laper)">
+			<span class="badge">{{laper.id}}</span>
+			{{laper.name}}
+		</li>
+	</ul>
+
+	<div class="pt-3 pl-4" *ngIf="selectedLaper">
+	  <h5 class="text-center">{{selectedLaper.name | uppercase}} Adalah Favoritku</h5>
+		<div class="form-group row">
+		  	<span>ID</span>
+		  	<div class="col-6 col-sm-9">
+		  		<p class="font-weight-bold">{{selectedLaper.id}}</p>
+		  	</div>
+		</div>
+	  	<div class="form-group row">
+		    <label>Name</label>
+		    <div class="col">
+		      <input class="form-control" [(ngModel)]="selectedLaper.name" placeholder="name" />
+		    </div>
+	  	</div>
+	</div>
 </div>
