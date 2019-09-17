@@ -1,0 +1,27 @@
+<!-- tidam menggunakan bootstrap -->
+<!-- <div *ngIf="laper">
+	<h2>{{ laper.name | uppercase }} Details</h2>
+	<div><span>id: </span>{{ laper.id }}</div>
+
+	<div>
+		<label>Name:<input [(ngModel)]="laper.name" placeholder="name"/></label>
+	</div>
+</div>
+ -->
+
+<!-- menggunakan bootstrap -->
+<div class="pt-3 pl-4" *ngIf="laper">
+  <h5 class="text-center">{{laper.name | uppercase}} Adalah Favoritku</h5>
+	<div class="form-group row">
+	  	<span>ID</span>
+	  	<div class="col-6 col-sm-9">
+	  		<p class="font-weight-bold">{{laper.id}}</p>
+	  	</div>
+	</div>
+  	<div class="form-group row">
+	    <label>Name</label>
+	    <div class="col">
+	      <input class="form-control" [(ngModel)]="laper.name" placeholder="name" />
+	    </div>
+  	</div>
+</div>

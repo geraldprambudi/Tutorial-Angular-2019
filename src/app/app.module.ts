@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FoodComponent } from './food/food.component'; 
 
-import { FormsModule } from '@angular/forms'; // Tambahkan forms module(1)
+import { FormsModule } from '@angular/forms';
+import { FoodDetailComponent } from './food-detail/food-detail.component'; // Tambahkan forms module(1)
 
 @NgModule({
   declarations: [
     AppComponent,
-    FoodComponent
+    FoodComponent,
+    FoodDetailComponent
   ],
   imports: [
     BrowserModule,
