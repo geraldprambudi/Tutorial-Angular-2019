@@ -1,13 +1,12 @@
 <!-- tidak menggunaakan bootstrap -->
 <h2>Makanan Favoritku</h2>
 <ul class="lapers">
-  <li *ngFor="let laper of lapers" [class.selected]="laper === selectedLaper" (click)="onSelect(laper)">
-    <span class="badge">{{laper.id}}</span> {{laper.name}}
+  <li *ngFor="let laper of lapers">
+    <a routerLink="/detail/{{laper.id}}">
+      <span class="badge">{{laper.id}}</span> {{laper.name}}
+    </a>
   </li>
 </ul>
-
-<app-food-detail [laper]="selectedLaper"></app-food-detail>
-
 
 <!-- menggunakan bootstrap
 <div class="container">

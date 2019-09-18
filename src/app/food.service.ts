@@ -20,4 +20,10 @@ export class FoodService {
   	this.messageService.add('FoodService: fetched foods');
   	return of(LAPERS);
   }
+
+
+  getFood(id: number): Observable<Foods> {
+  	this.messageService.add(`Hero service: fetched food id=${id}`);
+  	return of(LAPERS.find(laper => laper.id === id));
+  }
 }

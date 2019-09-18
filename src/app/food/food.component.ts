@@ -14,15 +14,15 @@ export class FoodComponent implements OnInit {
 	// lapers = LAPERS;  ambil variabel LAPERS dari makanan-indo.ts
 
 	// tambahkan yang dibawah ini ya
-	selectedLaper: Foods; // Foods diambil dari foods.ts
+	// selectedLaper: Foods;  Foods diambil dari foods.ts
 
 	// let laper of lapers
 	lapers: Foods[];
 
 	// laper diambil dari *ngFor food.component.html
-	onSelect(laper: Foods): void {
-		this.selectedLaper = laper;
-	}
+	// onSelect(laper: Foods): void {
+	// 	this.selectedLaper = laper;
+	// }
 
 
   constructor(private foodService: FoodService) { }
@@ -36,8 +36,7 @@ export class FoodComponent implements OnInit {
   // }
 
   getFoods(): void {
-  	this.foodService.getFoods()
-  		.subscribe(lapers => this.lapers = lapers);
+  	this.foodService.getFoods().subscribe(lapers => this.lapers = lapers);
   }
 
 }
