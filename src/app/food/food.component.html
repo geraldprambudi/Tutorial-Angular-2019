@@ -9,3 +9,15 @@
 <app-food-detail [laper]="selectedLaper"></app-food-detail>
 
 
+<!-- menggunakan bootstrap
+<div class="container">
+	<h2 class="p-3 text-center">Makanan Favorit</h2>
+	<ul class="list-group lapers">
+	  	<li class="list-group-item" *ngFor="let laper of lapers" [class.selected]="laper === selectedLaper" (click)="onSelect(laper)">
+			<span class="badge">{{laper.id}}</span>
+			{{laper.name}}
+		</li>
+	</ul>
+	<app-food-detail [laper]="selectedLaper"></app-food-detail>
+</div> -->
+

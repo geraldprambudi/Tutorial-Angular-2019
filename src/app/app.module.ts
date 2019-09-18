@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FoodComponent } from './food/food.component'; 
 
 import { FormsModule } from '@angular/forms';
-import { FoodDetailComponent } from './food-detail/food-detail.component'; // Tambahkan forms module(1)
+import { FoodDetailComponent } from './food-detail/food-detail.component';
+import { MessagesComponent } from './messages/messages.component'; // Tambahkan forms module(1)
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodComponent,
-    FoodDetailComponent
+    FoodDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
