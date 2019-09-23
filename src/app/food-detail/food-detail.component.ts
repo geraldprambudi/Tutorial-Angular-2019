@@ -1,5 +1,5 @@
 // tambahkan INPUT
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 // Tambahkan Foods dari foods
 import { Foods } from '../foods';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { FoodService }  from '../food.service';
 })
 export class FoodDetailComponent implements OnInit {
 
-	laper: Foods;
+	@Input() laper: Foods;
 
    constructor(
     private route: ActivatedRoute,
@@ -33,5 +33,9 @@ export class FoodDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.foodService.updateFood(this.laper).subscribe(() => this.goBack());
   }
 }

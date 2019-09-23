@@ -35,8 +35,28 @@ export class FoodComponent implements OnInit {
   // 	this.lapers = this.foodService.getFoods();
   // }
 
+  // getFoods(): void {
+  // 	this.foodService.getFoods().subscribe(lapers => this.lapers = lapers);
+  // }
+
   getFoods(): void {
-  	this.foodService.getFoods().subscribe(lapers => this.lapers = lapers);
+    this.foodService.getFoods().subscribe(lapers => this.lapers = lapers);
+  };
+
+  // add click eventf
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.foodService.addFood({ name } as Foods).subscribe(laper => {
+      this.lapers.push(laper);
+    });
+  }
+
+
+
+  delete(laper: Foods): void {
+    this.lapers = this.lapers.filter(h => h !== laper);
+    this.foodService.deleteFood(laper).subscribe();
   }
 
 }

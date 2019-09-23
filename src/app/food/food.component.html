@@ -1,22 +1,28 @@
 <!-- tidak menggunaakan bootstrap -->
 <h2>Makanan Favoritku</h2>
+<!-- add form input -->
+<div>
+	<label>Food name:
+		<input #foodName />
+	</label>
+	<button (click)="add(foodName.value); foodName.value=''">Add</button>
+</div>
 <ul class="lapers">
   <li *ngFor="let laper of lapers">
     <a routerLink="/detail/{{laper.id}}">
       <span class="badge">{{laper.id}}</span> {{laper.name}}
     </a>
+    <button class="delete" title="delete laper" (click)="delete(laper)">x</button>
   </li>
 </ul>
 
-<!-- menggunakan bootstrap
-<div class="container">
-	<h2 class="p-3 text-center">Makanan Favorit</h2>
-	<ul class="list-group lapers">
-	  	<li class="list-group-item" *ngFor="let laper of lapers" [class.selected]="laper === selectedLaper" (click)="onSelect(laper)">
-			<span class="badge">{{laper.id}}</span>
-			{{laper.name}}
-		</li>
-	</ul>
-	<app-food-detail [laper]="selectedLaper"></app-food-detail>
-</div> -->
-
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+  </li>
+</ul>
+ -->
