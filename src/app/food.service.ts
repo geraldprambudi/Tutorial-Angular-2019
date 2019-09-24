@@ -1,17 +1,11 @@
 import { Injectable } from '@angular/core';
 // import foods & makanan-indo
 import { Foods } from './foods';
-
-
 import { MessageService } from './message.service'; 
-
 // import rxjs observable
 import { Observable, of } from 'rxjs';
-
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +17,6 @@ export class FoodService {
   httpOptions = {headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
-
 
 
    /** GET Foods from the server */
@@ -41,14 +34,6 @@ export class FoodService {
     );
   }
 
-  // getFood(id: number): Observable<Foods> {
-  //   const url = `${this.foodsUrl}/${id}`;
-  //   return this.http.get<Foods>(url).pipe(
-  //     tap(_ => this.log(`fetched food id=${id}`)),
-  //     catchError(this.handleError<Foods>(`getFood id=${id}`))
-  //   );
-  // }
-
   getFoodNo404<Data>(id: number): Observable<Foods> {
     const url = `${this.foodsUrl}/?id=${id}`;
     return this.http.get<Foods[]>(url)
@@ -61,6 +46,8 @@ export class FoodService {
         catchError(this.handleError<Foods>(`getFood id=${id}`))
       );
   }
+
+
   
   updateFood(laper: Foods): Observable<any> {
     return this.http.put(this.foodsUrl, laper, this.httpOptions).pipe(
@@ -69,17 +56,11 @@ export class FoodService {
     );
   }
 
-
-
   // add food
   addFood (laper: Foods): Observable<Foods> {
     return this.http.post<Foods>(this.foodsUrl, laper, this.httpOptions).pipe(tap((newFood: Foods) => this.log(`added food w/ id={newFood.id}`)), catchError(this.handleError<Foods>('addFood'))
     );
   }
-
- 
-
-
 
   /** DELETE: delete the hero from the server */
   deleteFood (laper: Foods | number): Observable<Foods> {

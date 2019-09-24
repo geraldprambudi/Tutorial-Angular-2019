@@ -24,8 +24,6 @@ export class FoodSearchComponent implements OnInit {
   	this.searchTerm.next(term);
   }
 
-
-
   ngOnInit(): void {
   	this.lapers$ = this.searchTerm.pipe(
   		debounceTime(300),
